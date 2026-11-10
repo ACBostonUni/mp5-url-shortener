@@ -1,3 +1,10 @@
+@font-face {
+  font-family: 'DEM-MO-Proportional';
+  src: url('./Assets/DEM-MO typeface/Proportional/DEM-MO-700.otf') format('opentype');
+  font-weight: 700;
+
+}
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
