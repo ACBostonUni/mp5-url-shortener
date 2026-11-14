@@ -22,7 +22,7 @@ const StyledShortenerContainer = styled.div`
 
     @media screen and (max-width: 800px){
         width: 92%;
-        height: 40%;
+        height: auto;
         
     }
 
@@ -123,7 +123,7 @@ const StyledButton = styled.button`
 
     @media screen and (max-width: 800px){
         font-size: calc(9px + 1.1vw);
-        margin: 4% 0 0 0;
+        margin: 5% 0 3% 0;
     }
 
 `
@@ -159,17 +159,19 @@ const ErrorStyling = styled.div`
     background-color: rgb(255 66 66 / 0.78);
     border: mediumvioletred 5px solid;
     border-radius: 10px;
+  
     width: 45%;
-    height: 20%;
-    margin: 7% auto;
+    height: auto;
+    margin: 2% auto;
     padding: 2%;
     color: #ffffff;
-    font-family: Cambria, sans-serif;
-    font-size: calc(8px + 1.2vw);
+    font-family: DEM-MO-Proportional, sans-serif;
+    font-size: calc(10px + 1.2vw);
     
     @media screen and (max-width: 800px) {
         
-        width: 70%
+        width: 70%;
+        padding: 3% 2%;
     }
     
 `
@@ -182,7 +184,7 @@ export default function Home() {
 
     const [url , setUrl] = useState("");
     const [alias, setAlias] = useState("");
-    const [error, setError] = useState(0); // 1 for null parameters, 2 for insert failure
+    const [error, setError] = useState(0); // 1 for null parameters, 2 for insert failure (Invalid URL)
     const [success, setSuccess] = useState(false);
 
 
@@ -200,6 +202,7 @@ export default function Home() {
 
         if(alias == "" || url == ""){
             setError(1);
+            setSuccess(false);
         } else {
 
             const InsertSuccess = await putDataToDb(alias, url);
@@ -263,15 +266,22 @@ export default function Home() {
         </StyledButton>
       </StyledShortenerContainer>
 
+        {error ==1  && <ErrorStyling>Make sure to fill in all fields</ErrorStyling>}
 
-        <ShortenedURLContainer>
+        {error ==2  && <ErrorStyling>Provided URL is Invalid</ErrorStyling>}
 
-            {error ==1 && !success && <ErrorStyling>Make sure to fill in all fields</ErrorStyling>}
 
-            <StyledShortenedURLText>
-                Your New Link:   {/* Replace with the shortener URL + the alias (Display conditionally on error being null 0 and success being true)*/}
-            </StyledShortenedURLText>
-        </ShortenedURLContainer>
+            { success &&
+                <ShortenedURLContainer>
+                <StyledShortenedURLText>
+
+                Your New Link: https://mp5-url-shortener-gold.vercel.app/{alias}
+
+                </StyledShortenedURLText>
+                </ShortenedURLContainer>
+            }
+
+
 
     </StyledMain>
   );

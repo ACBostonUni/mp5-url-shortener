@@ -16,9 +16,12 @@ export default async function putDataToDb(
     // Create a basic fetch and then the response for
     // await fetch, inside the then, if response status == 200
     // If URL doesn't return the 200 invalid
-    const valid = await fetch(url).then((response) => response.ok); // (response is a parameter a temp variable to recieve the fetch package)
-                                                                                        // => means taking the left as the input produce what's on the right
-                                                                                        // response.ok looks inside the package and grabs that attribute
+
+    const valid = await fetch(url).then((response) => response.ok)// => means taking the left as the input produce what's on the right
+                                                                                                // response.ok looks inside the package and grabs that attribute
+        //                                                                                      (response is a parameter a temp variable to recieve the fetch package)
+        .catch(() => false); // If fetch crashes on garbage input, catch the error and set valid to false;
+
     if (!valid){
         return false; // invalid URL
 
@@ -27,7 +30,7 @@ export default async function putDataToDb(
     // Key value pair call it whatever, as long as it is standard
     // key is alias and data is url
     const objectToInsert = {
-        alias: alias.toLowerCase() as string, // Changed this because of a bug where creating an alias with uppercase would give not found.
+        alias: alias, // Changed this because of a bug where creating an alias with uppercase would give not found.
                                                 // (All things revert to lowercase when you search a URL it would seem)
         longUrl: url,
 
