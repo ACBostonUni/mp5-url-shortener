@@ -27,7 +27,7 @@ const StyledH2 = styled.h2`
 const Nav = styled.nav`
     padding: 0.5%;
     margin: 1%;
-    width: 50%;
+    width: 100%;
     text-align: right;
 `;
 
@@ -42,6 +42,7 @@ const NavLink = styled(Link)`
     @media screen and (max-width: 800px) {
 
         font-size: 110%;
+        margin: 1% 3%;
 
     }
 

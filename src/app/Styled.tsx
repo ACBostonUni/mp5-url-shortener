@@ -34,6 +34,7 @@ export const StyledPageTitle = styled.h2`
   
   font-weight: bold;
   font-family: "DEM-MO-Proportional", sans-serif;
+    color: #171717;
   font-size: calc(11px + 2vw);
   margin: 1% auto 2.5% auto;
 
@@ -48,7 +49,7 @@ export const StyledSubText = styled.p`
   font-size: calc(5px + 1.1vw);
   margin: 2.5% auto 1% auto;
 
-  @media screen and (max-width: 1400px){
-        calc(10px + 1.1vw);
+  @media screen and (max-width: 800px){
+        font-size: calc(10px + 1.1vw);
 }
 `

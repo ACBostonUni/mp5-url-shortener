@@ -21,7 +21,7 @@ const StyledShortenerContainer = styled.div`
     border-radius: 30px;
 
     @media screen and (max-width: 800px){
-        width: 90%;
+        width: 92%;
         height: 40%;
         
     }
@@ -37,7 +37,7 @@ const StyledPromptText = styled.p`
   font: bold calc(4px + 1.1vw) "Lucida Sans Typewriter", sans-serif;
 
   @media screen and (max-width: 800px){
-    font-size: calc(9px + 1.1vw);
+    font-size: calc(10px + 1.1vw);
       margin: 6% 0 6% 0;
 }
   
@@ -72,7 +72,8 @@ const StyledURLInput = styled.input`
 
     @media screen and (max-width: 800px){
         padding: 1.5% 0;
-        font-size: calc(7px + 1.1vw);
+        font-size: calc(10px + 1.1vw);
+        
     }
 
 
@@ -93,7 +94,8 @@ const StyledAliasInput = styled.input`
 
     @media screen and (max-width: 800px){
         padding: 1.5% 0;
-        font-size: calc(7px + 1.1vw);
+        font-size: calc(10px + 1.1vw);
+        width: 40%
     }
 
 `
@@ -121,6 +123,7 @@ const StyledButton = styled.button`
 
     @media screen and (max-width: 800px){
         font-size: calc(9px + 1.1vw);
+        margin: 4% 0 0 0;
     }
 
 `
@@ -145,6 +148,8 @@ const StyledShortenedURLText = styled.p`
 
     @media screen and (max-width: 800px){
         font-size: calc(9px + 1.1vw);
+        
+        
     }
 `
 export default function Home() {
