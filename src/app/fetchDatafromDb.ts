@@ -11,6 +11,6 @@ export default async function fetchDataFromDb (redirectAlias: string):Promise<st
 
     const urlCollection = await getCollection(URL_COLLECTION); // grab the document collection we are querying
     const actualData = await urlCollection.findOne(objectToFind); // find the object
-
+    console.log(actualData ? actualData.longUrl: "null");
     return actualData ? actualData.longURL : null; // if actualData is not null return the longUrl we stored for that alias, otherwise return null
 }
