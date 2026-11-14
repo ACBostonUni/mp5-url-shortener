@@ -152,6 +152,28 @@ const StyledShortenedURLText = styled.p`
         
     }
 `
+
+
+export const ErrorStyling = styled.div`
+
+    background-color: rgb(255 66 66 / 0.78);
+    border: mediumvioletred 5px solid;
+    border-radius: 10px;
+    width: 45%;
+    height: 20%;
+    margin: 7% auto;
+    padding: 2%;
+    color: #ffffff;
+    font-family: Cambria, sans-serif;
+    font-size: calc(8px + 1.2vw);
+    
+    @media screen and (max-width: 800px) {
+        
+        width: 70%
+    }
+    
+`
+
 export default function Home() {
 
 
@@ -160,7 +182,7 @@ export default function Home() {
 
     const [url , setUrl] = useState("");
     const [alias, setAlias] = useState("");
-    const [error, setError] = useState(0); // 1 for null parameters, 2 for invalid URL
+    const [error, setError] = useState(0); // 1 for null parameters, 2 for insert failure
     const [success, setSuccess] = useState(false);
 
 
@@ -243,6 +265,9 @@ export default function Home() {
 
 
         <ShortenedURLContainer>
+
+            {error ==1 && !success && <ErrorStyling>Make sure to fill in all fields</ErrorStyling>}
+
             <StyledShortenedURLText>
                 Your New Link:   {/* Replace with the shortener URL + the alias (Display conditionally on error being null 0 and success being true)*/}
             </StyledShortenedURLText>
