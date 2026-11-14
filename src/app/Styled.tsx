@@ -34,12 +34,19 @@ export const StyledPageTitle = styled.h2`
   font-family: "DEM-MO-Proportional", sans-serif;
   font-size: calc(11px + 2vw);
   margin: 1% auto 2.5% auto;
+
+    @media screen and (max-width: 1400px){
+        font-size: calc(15px + 2vw);
+    }
 `
 
 export const StyledSubText = styled.p`
   white-space: pre-wrap;
   color: rgb(100 116 139 / 0.98);
   font-size: calc(5px + 1.1vw);
-  margin: 2.5% auto 1% auto
+  margin: 2.5% auto 1% auto;
 
+  @media screen and (max-width: 1400px){
+        calc(5px + 1.1vw);
+}
 `

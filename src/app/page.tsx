@@ -20,6 +20,7 @@ const StyledShortenerContainer = styled.div`
     border-radius: 30px;
 
     @media screen and (max-width: 1400px){
+        width: 75%
         
     }
 
