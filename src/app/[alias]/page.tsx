@@ -9,10 +9,8 @@ export default async function Redirect({params,}: {
     const redirectUrl = await fetchDataFromDb(alias);
 
     if (redirectUrl !== null) {
-
         redirect(redirectUrl);
     } else {
-        console.log(`Redirect URL: ${redirectUrl}`);
         redirect("https://mp5-url-shortener-gold.vercel.app/Not_Found");
     }
 }
