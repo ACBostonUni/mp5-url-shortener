@@ -40,6 +40,7 @@ export const StyledPageTitle = styled.h2`
 
     @media screen and (max-width: 1400px){
         font-size: calc(20px + 2vw);
+        white-space: pre-wrap;
     }
 `
 
