@@ -5,9 +5,13 @@ export const StyledMain = styled.div`
   align-items: center;
   text-align: center;
   background: linear-gradient(to bottom, #fafafa 10%, #c5ffdd 100%);
+    padding: 2% 0;
   height: 100%;
   width: 100%;
-
+    
+    @media screen and (max-width: 1400px){
+        height: 100vh;
+    }
 `
 
 

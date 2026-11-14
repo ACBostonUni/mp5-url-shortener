@@ -19,6 +19,10 @@ const StyledShortenerContainer = styled.div`
 
     border-radius: 30px;
 
+    @media screen and (max-width: 1400px){
+        
+    }
+
 `
 
 
@@ -102,7 +106,6 @@ const ShortenedURLContainer = styled.div`
     width: 60%;
     margin: 2% auto;
     padding: 2% 2%;
-    
     background: #ffffff;
     border: rgb(229 231 235 / 0.99) solid 2px;
     border-radius: 15px;
