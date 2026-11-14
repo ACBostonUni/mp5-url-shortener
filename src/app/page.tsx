@@ -20,9 +20,9 @@ const StyledShortenerContainer = styled.div`
 
     border-radius: 30px;
 
-    @media screen and (max-width: 1400px){
+    @media screen and (max-width: 800px){
         width: 90%;
-        
+        height: 40%;
         
     }
 
@@ -34,7 +34,12 @@ const StyledShortenerContainer = styled.div`
 const StyledPromptText = styled.p`
   text-align: left;
   margin: 3% 0 3% 0;
-  font: bold calc(4px + 1.1vw) "Lucida Sans Typewriter", sans-serif
+  font: bold calc(4px + 1.1vw) "Lucida Sans Typewriter", sans-serif;
+
+  @media screen and (max-width: 800px){
+    font-size: calc(9px + 1.1vw);
+      margin: 6% 0 6% 0;
+}
   
 `
 
@@ -47,7 +52,11 @@ const StyledSiteURLText = styled.p`
   text-align: left;
   font: calc(6px + 1.1vw) "", sans-serif;
   color: #687666;
-  margin: auto 1% auto auto
+  margin: auto 1% auto auto;
+
+  @media screen and (max-width: 800px){
+    font-size: calc(9px + 1.1vw);
+}
 `
 
 const StyledURLInput = styled.input`
@@ -60,6 +69,11 @@ const StyledURLInput = styled.input`
   border-radius: 15px;
   color: #171717;
   font: calc(4px + 1.2vw) "Lucida Sans Typewriter", sans-serif;
+
+    @media screen and (max-width: 800px){
+        padding: 1.5% 0;
+        font-size: calc(7px + 1.1vw);
+    }
 
 
 
@@ -76,8 +90,11 @@ const StyledAliasInput = styled.input`
   border-radius: 15px;
   color: #171717;
   font: calc(4px + 1.1vw) "Lucida Sans Typewriter", sans-serif;
-  
-  
+
+    @media screen and (max-width: 800px){
+        padding: 1.5% 0;
+        font-size: calc(7px + 1.1vw);
+    }
 
 `
 
@@ -85,7 +102,7 @@ const StyledAliasInput = styled.input`
 const StyledButton = styled.button`
 
     width: 70%;
-    height: 50%;
+    
     background-color: rgb(48 180 100 / 0.91);
     border: transparent;
     border-radius: 15px;
@@ -100,6 +117,10 @@ const StyledButton = styled.button`
     /* 2. Use the ampersand (&) symbol */
     &:hover {
         background-color: rgb(139 217 171);
+    }
+
+    @media screen and (max-width: 800px){
+        font-size: calc(9px + 1.1vw);
     }
 
 `
@@ -121,6 +142,10 @@ const StyledShortenedURLText = styled.p`
   color: #687666;
   margin: auto 1% auto auto;
     font-weight: bold;
+
+    @media screen and (max-width: 800px){
+        font-size: calc(9px + 1.1vw);
+    }
 `
 export default function Home() {
 
