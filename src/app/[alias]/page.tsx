@@ -11,6 +11,6 @@ export default async function Redirect({params,}: {
     if (redirectUrl !== null) {
         redirect(redirectUrl);
     } else {
-        redirect("url/Not_Found");
+        redirect("https://mp5-url-shortener-gold.vercel.app/Not_Found");
     }
 }
