@@ -20,7 +20,7 @@ export default function Coming_Soon(){
 
                 <StyledPageTitle
 
-                >Uh Oh.. That Page Can't Be Found
+                >Uh Oh... That Page Can't Be Found
 
                 </StyledPageTitle>
 

@@ -47,7 +47,7 @@ export const StyledSubText = styled.p`
   white-space: pre-wrap;
   color: rgb(100 116 139 / 0.98);
   font-size: calc(5px + 1.1vw);
-  margin: 2.5% auto 1% auto;
+  margin: 3% auto 1% auto;
 
   @media screen and (max-width: 800px){
         font-size: calc(10px + 1.1vw);

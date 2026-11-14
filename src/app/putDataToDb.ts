@@ -30,8 +30,7 @@ export default async function putDataToDb(
     // Key value pair call it whatever, as long as it is standard
     // key is alias and data is url
     const objectToInsert = {
-        alias: alias, // Changed this because of a bug where creating an alias with uppercase would give not found.
-                                                // (All things revert to lowercase when you search a URL it would seem)
+        alias: alias,
         longUrl: url,
 
     }
