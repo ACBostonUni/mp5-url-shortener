@@ -19,7 +19,7 @@ const StyledH2 = styled.h2`
     color: #171717;
     @media screen and (max-width: 800px) {
         
-        font-size: 175%;
+        font-size: 225%;
         
     }
 `;
