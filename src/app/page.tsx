@@ -68,7 +68,7 @@ const StyledURLInput = styled.input`
   border: rgb(47 143 85 / 0.91) solid 3px;
   border-radius: 15px;
   color: #171717;
-  font: calc(4px + 1.2vw) "Lucida Sans Typewriter", sans-serif;
+  font: calc(4px + 1.2vw) "Lucida Sans Typewriter", "Monotype Corsiva", sans-serif;
 
     @media screen and (max-width: 800px){
         padding: 1.5% 0;
@@ -90,7 +90,7 @@ const StyledAliasInput = styled.input`
   border: rgb(47 143 85 / 0.91) solid 3px;
   border-radius: 15px;
   color: #171717;
-  font: calc(4px + 1.1vw) "Lucida Sans Typewriter", sans-serif;
+  font: calc(4px + 1.1vw) "Lucida Sans Typewriter", "Monotype Corsiva", sans-serif;
 
     @media screen and (max-width: 800px){
         padding: 1.5% 0;
