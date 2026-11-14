@@ -1,16 +1,17 @@
 "use client"
 
+
+
+
 import {useState} from "react";
-
-
 import styled from "styled-components";
 import {StyledMain, StyledPageTitle, StyledSubText, TitleContainer} from "@/app/Styled";
-
+import putDataToDb from "@/app/putDataToDb";
 
 
 
 const StyledShortenerContainer = styled.div`
-    margin: auto;
+    margin: 1% auto;
     padding: 1% 2%;
     width: 60%;
     border: rgb(229 231 235 / 0.99) solid 2px;
@@ -95,10 +96,68 @@ const StyledButton = styled.button`
     }
 
 `
+
+const ShortenedURLContainer = styled.div`
+    
+    width: 60%;
+    margin: 2% auto;
+    padding: 2% 2%;
+    
+    background: #ffffff;
+    border: rgb(229 231 235 / 0.99) solid 2px;
+    border-radius: 15px;
+
+`
+
+const StyledShortenedURLText = styled.p`
+  text-align: center;
+  font: calc(6px + 1.1vw) "", sans-serif;
+  color: #687666;
+  margin: auto 1% auto auto;
+    font-weight: bold;
+`
 export default function Home() {
+
+
+
+
+
     const [url , setUrl] = useState("");
     const [alias, setAlias] = useState("");
-  return (
+    const [error, setError] = useState(0); // 1 for null parameters, 2 for invalid URL
+    const [success, setSuccess] = useState(false);
+
+
+
+    // Want to pass in the shortened URL, instantly be redirected
+    // Dynamic URL, going to want to contact Database, see if valid,
+    // Once I have check that it is valid and exists in the database, there is a very useful redirect
+    // Use navigate (to automatically redirect that it exists and use navigate to the fetched URL)
+    // Don't want any input
+
+
+
+
+    async function ShortenURL(alias: string, url: string) {
+
+        if(alias == "" || url == ""){
+            setError(1);
+        } else {
+
+            const InsertSuccess = await putDataToDb(alias, url);
+            if(InsertSuccess){ // Insert was successful
+                setSuccess(true);
+                setError(0);
+            } else {
+                setSuccess(false);
+                setError(2);
+            }
+        }
+
+    }
+
+
+    return (
     <StyledMain>
 
 
@@ -141,12 +200,17 @@ export default function Home() {
         </StyledAliasContainer>
 
 
-        <StyledButton type = "button">
-
+        <StyledButton type = "button" onClick={() => ShortenURL(alias, url)}>
             Shorten
         </StyledButton>
       </StyledShortenerContainer>
 
+
+        <ShortenedURLContainer>
+            <StyledShortenedURLText>
+                Your New Link:   {/* Replace with the shortener URL + the alias (Display conditionally on error being null 0 and success being true)*/}
+            </StyledShortenedURLText>
+        </ShortenedURLContainer>
 
     </StyledMain>
   );
