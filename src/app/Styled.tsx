@@ -11,6 +11,8 @@ export const StyledMain = styled.div`
     
     @media screen and (max-width: 1400px){
         height: 100vh;
+        padding: 1% 0;
+        
     }
 `
 
@@ -36,7 +38,7 @@ export const StyledPageTitle = styled.h2`
   margin: 1% auto 2.5% auto;
 
     @media screen and (max-width: 1400px){
-        font-size: calc(15px + 2vw);
+        font-size: calc(20px + 2vw);
     }
 `
 
@@ -47,6 +49,6 @@ export const StyledSubText = styled.p`
   margin: 2.5% auto 1% auto;
 
   @media screen and (max-width: 1400px){
-        calc(5px + 1.1vw);
+        calc(10px + 1.1vw);
 }
 `
