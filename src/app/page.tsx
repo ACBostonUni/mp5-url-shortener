@@ -154,7 +154,7 @@ const StyledShortenedURLText = styled.p`
 `
 
 
-export const ErrorStyling = styled.div`
+const ErrorStyling = styled.div`
 
     background-color: rgb(255 66 66 / 0.78);
     border: mediumvioletred 5px solid;
