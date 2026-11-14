@@ -14,14 +14,15 @@ const StyledShortenerContainer = styled.div`
     margin: 1% auto;
     padding: 1% 2%;
     width: 60%;
+    
     border: rgb(229 231 235 / 0.99) solid 2px;
     background: #fafafa;
 
     border-radius: 30px;
 
     @media screen and (max-width: 1400px){
-        width: 75%;
-        padding: 0.5% 1%;
+        width: 90%;
+        
         
     }
 
