@@ -19,7 +19,7 @@ const StyledH2 = styled.h2`
     color: #171717;
     @media screen and (max-width: 800px) {
         
-        font-size: 150%;
+        font-size: 175%;
         
     }
 `;
@@ -41,7 +41,7 @@ const NavLink = styled(Link)`
 
     @media screen and (max-width: 800px) {
 
-        font-size: 100%;
+        font-size: 110%;
 
     }
 
