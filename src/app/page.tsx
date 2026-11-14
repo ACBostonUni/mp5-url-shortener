@@ -252,7 +252,7 @@ export default function Home() {
         <StyledAliasContainer>
 
           <StyledSiteURLText>
-              https://mp5-url-shortener-gold.vercel.app/
+              https://webtools-mp5.vercel.app/
           </StyledSiteURLText>
 
           <StyledAliasInput value ={alias} placeholder={"Your Alias Here"} onChange={(event) => setAlias(event.target.value)}/>
@@ -275,7 +275,7 @@ export default function Home() {
                 <ShortenedURLContainer>
                 <StyledShortenedURLText>
 
-                Your New Link: https://mp5-url-shortener-gold.vercel.app/{alias}
+                Your New Link: https://webtools-mp5.vercel.app/{alias}
 
                 </StyledShortenedURLText>
                 </ShortenedURLContainer>
