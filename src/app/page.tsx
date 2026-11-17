@@ -163,13 +163,13 @@ const ErrorStyling = styled.div`
     background-color: rgb(255 66 66 / 0.78);
     border: mediumvioletred 5px solid;
     border-radius: 10px;
-  
+    white-space: pre-wrap;
     width: 45%;
     height: auto;
     margin: 2% auto;
     padding: 2%;
     color: #ffffff;
-    font-family: DEM-MO-Proportional, sans-serif;
+    font-family: Rockwell, sans-serif;
     font-size: calc(10px + 1.2vw);
     
     @media screen and (max-width: 800px) {
@@ -210,12 +210,15 @@ export default function Home() {
         } else {
 
             const InsertSuccess = await putDataToDb(alias, url);
-            if(InsertSuccess){ // Insert was successful
+            if(InsertSuccess == 0){ // Insert was successful
                 setSuccess(true);
                 setError(0);
-            } else {
+            } else if (InsertSuccess == 1){
                 setSuccess(false);
                 setError(2);
+            } else if (InsertSuccess == 2){
+                setSuccess(false);
+                setError(3);
             }
         }
 
@@ -273,6 +276,8 @@ export default function Home() {
         {error ==1  && <ErrorStyling>Make sure to fill in all fields</ErrorStyling>}
 
         {error ==2  && <ErrorStyling>Provided URL is Invalid</ErrorStyling>}
+
+        {error ==3  && <ErrorStyling>Seems like that alias is already in use. {"\n"} Try a different alias.</ErrorStyling>}
 
 
             { success &&

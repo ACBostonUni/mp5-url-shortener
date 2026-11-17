@@ -8,7 +8,7 @@ export default async function putDataToDb(
     url: string,
 
 
-):Promise<boolean> {
+):Promise<number> {
 
     console.log("Creating new key val URL pair")
     // Need to check if it is a valid URL
@@ -23,7 +23,7 @@ export default async function putDataToDb(
         .catch(() => false); // If fetch crashes on garbage input, catch the error and set valid to false;
 
     if (!valid){
-        return false; // invalid URL
+        return 1; // invalid URL
 
     }
 
@@ -35,8 +35,21 @@ export default async function putDataToDb(
 
     }
 
+
     console.log("shortening...");
-    const urlCollection = await getCollection(URL_COLLECTION); // Fetch the collection
+    const urlCollection = await getCollection(URL_COLLECTION); // grab the document collection we are querying
+
+    // Addition of duplicate alias checking
+    const objectToFind = { // Package up the query
+        alias: alias
+    }
+
+    const actualData = await urlCollection.findOne(objectToFind); // find the object
+
+    if (actualData) { // This means we already have a URL for the given alias
+        return 2; // Error for duplicate alias
+    }
+
     const res = await urlCollection.insertOne(objectToInsert); // Put the key value into the Db
 
     if (!res.acknowledged){
@@ -45,7 +58,7 @@ export default async function putDataToDb(
     } else {
 
         console.log("Insert Successfully");
-        return true; //successful insert
+        return 0; //successful insert
     }
 
 
