@@ -188,7 +188,7 @@ export default function Home() {
 
     const [url , setUrl] = useState("");
     const [alias, setAlias] = useState("");
-    const [error, setError] = useState(0); // 1 for null parameters, 2 for insert failure (Invalid URL)
+    const [error, setError] = useState(0); // 1 for null parameters, 2 for insert failure (Invalid URL) 3 for Duplicate Alias
     const [success, setSuccess] = useState(false);
 
 
@@ -213,10 +213,10 @@ export default function Home() {
             if(InsertSuccess == 0){ // Insert was successful
                 setSuccess(true);
                 setError(0);
-            } else if (InsertSuccess == 1){
+            } else if (InsertSuccess == 1){ // Invalid URL
                 setSuccess(false);
                 setError(2);
-            } else if (InsertSuccess == 2){
+            } else if (InsertSuccess == 2){ // Duplicate Alias
                 setSuccess(false);
                 setError(3);
             }
