@@ -30,7 +30,7 @@ export default async function putDataToDb(
     // Key value pair call it whatever, as long as it is standard
     // key is alias and data is url
     const objectToInsert = {
-        alias: alias,
+        alias: alias, 
         longUrl: url,
 
     }
