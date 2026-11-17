@@ -7,6 +7,7 @@ const StyledMainDiffPage = styled.div`
   background: linear-gradient(to bottom, #fafafa 20%, #c5ffdd 100%);
   height: 100vh;
   width: 100%;
+    padding: 2% 0;
 
 `
 export default function Coming_Soon(){
