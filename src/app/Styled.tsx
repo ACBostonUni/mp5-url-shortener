@@ -48,6 +48,7 @@ export const StyledSubText = styled.p`
   white-space: pre-wrap;
   color: rgb(100 116 139 / 0.98);
   font-size: calc(5px + 1.1vw);
+    font-family: Arial, Helvetica, sans-serif;
   margin: 3% auto 1% auto;
 
   @media screen and (max-width: 800px){
