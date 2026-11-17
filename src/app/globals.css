@@ -1,10 +1,10 @@
 
-{ /* This is necessary to be put here so I can keep up the nice imported font across the website */}
+
 @font-face {
   font-family: 'DEM-MO-Proportional';
   src: url('./Assets/DEM-MO typeface/Proportional/DEM-MO-700.otf') format('opentype');
   font-weight: 700;
-
+{ /* This is necessary to be put here so I can keep up the nice imported font across the website */}
 }
 
 * {
